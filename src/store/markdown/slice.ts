@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { initialState, name } from "./constants";
 
