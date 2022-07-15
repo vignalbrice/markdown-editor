@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import "./colors.scss";
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+#nav-expand:focus {
+  opacity: 0;
+}
+
+#nav-expand:focus ~ main {
+  margin-left: 17rem;
+  transition-delay: 0.25s;
+}
+
+#nav-expand:focus ~ nav {
+  left: 0;
+  transition-delay: 0.25s;
+}
+
+#nav-expand:hover {
+  background-color: #369;
+  color: #fff;
+}
+
+// MarkDown Fonts System
+h1 {
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: 0px;
+  color: $black;
+}
+h2 {
+  font-size: 28px;
+  font-weight: 100;
+  color: $black;
+}
+h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: $black;
+}
+h4 {
+  font-size: 20px;
+  font-weight: bold;
+  color: $black;
+}
+h5 {
+  font-size: 16px;
+  font-weight: bold;
+  color: $black;
+}
+h6 {
+  font-size: 14px;
+  font-weight: bold;
+  color: $orange;
+}
+
+p {
+  font-size: 14px;
+  color: $middle-dark-grey;
+}
+
+li {
+  font-size: 14px;
+  line-height: 24px;
+  position: relative;
+  color: $middle-dark-grey;
+  font-weight: 400;
+  padding-left: 0.3rem;
+}
+
+ul {
+  li {
+    &::marker {
+      color: $orange;
+      font-size: smaller;
+    }
+  }
+}
+
+blockquote {
+  height: 96px;
+  background: $pale-gray;
+  display: flex;
+  align-items: center;
+  padding: 0 1.8rem;
+  border-radius: 4px;
+  border-left: 4px solid $orange;
+  margin: 0;
+  p {
+    color: $black !important;
+    font-weight: 600;
+    line-height: 24px;
+  }
+  a {
+    color: $black;
+  }
+}
+
+code {
+  font-family: "Roboto Mono", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+pre {
+  height: auto;
+  padding: 20px;
+  background: $pale-gray;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  code {
+    margin: 0 0.3rem;
+  }
+}
+
+/* Switch */
+.switch {
+  display: inline-block;
+  span {
+    position: relative;
+    width: 48px;
+    height: 24px;
+    float: left;
+    input {
+      display: none;
+      &:checked + .slider {
+        background-color: #5a6069;
+      }
+      &:checked + .slider:before {
+        transform: translateX(24px);
+      }
+      &:focus + .slider {
+        box-shadow: 0 0 1px #5a6069;
+      }
+    }
+  }
+  label {
+    line-height: 34px;
+    margin-left: 12px;
+    cursor: pointer;
+  }
+}
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  border: 0;
+  outline: none;
+  background-color: #5a6069;
+  transition: 0.4s;
+  border-radius: 34px;
+  cursor: pointer;
+  &:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+}
